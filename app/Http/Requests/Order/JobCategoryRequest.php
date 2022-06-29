@@ -13,7 +13,7 @@ class JobCategoryRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class JobCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'job_category_name' => 'required|min:2|max:255|unique:job_categories,name,' . $this->id
         ];
     }
 }

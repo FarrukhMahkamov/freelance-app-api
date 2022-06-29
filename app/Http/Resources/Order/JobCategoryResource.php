@@ -14,6 +14,9 @@ class JobCategoryResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'job_category_name' => $this->name
+        ];
     }
 }
