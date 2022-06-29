@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\Order\JobCategoryController;
+use App\Http\Controllers\Api\Order\SubjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +29,13 @@ Route::prefix('v1')->group(function() {
         Route::put('job-categories/{id}', 'update');
         Route::delete('job-categories/{id}','destroy');
     }); 
+
+    Route::controller(SubjectController::class)
+    ->group(function () {
+        Route::get('subjects', 'index');
+        Route::post('subjects', 'store');
+        Route::put('subjects/{id}', 'update');
+        Route::delete('subjects/{id}','destroy');
+    });
 
 });

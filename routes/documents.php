@@ -12,6 +12,9 @@ Route::prefix('v1/faker')->group(function() {
         Route::get('job-categories/{count}', 'addJobCategory');
         Route::get('job-categories', 'deleteJobCategories');
 
+        Route::get('subjects/{count}', 'addSubject');
+        Route::get('subjects', 'deleteSubjects');
+
     });
 
 });
