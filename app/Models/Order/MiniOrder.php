@@ -5,19 +5,15 @@ namespace App\Models\Order;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class MiniOrder extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'job_category_id',
         'subject_id',
         'name',
-        'deadline_date',
-        'order_price',
-        'required_orginality',
-        'about_order',
-        'files',
+        'deadline_date'
     ];
 
     public function jobCategory()
