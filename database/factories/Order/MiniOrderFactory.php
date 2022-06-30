@@ -2,6 +2,8 @@
 
 namespace Database\Factories\Order;
 
+use App\Models\Order\Subject;
+use App\Models\Order\JobCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,10 @@ class MiniOrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->title(),
+            'job_category_id' => JobCategory::factory(),
+            'subject_id' => Subject::factory(),
+            'deadline_date' => $this->faker->dateTime(),
         ];
     }
 }
